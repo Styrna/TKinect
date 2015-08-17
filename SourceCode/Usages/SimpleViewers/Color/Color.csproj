@@ -49,7 +49,7 @@
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="TKinect">
-      <HintPath>..\..\..\Mgr\LIBRARY\TKinect.dll</HintPath>
+      <HintPath>..\..\..\..\TKinect\TKinect.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
