@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKinect", "TKinect\TKinect.csproj", "{7B5C71FC-1DBB-4FB0-B3EF-936D85C1F936}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKinectStudio", "TKinectStudio\TKinectStudio.csproj", "{AD1E3AFC-1FCF-419C-B643-503F7F467081}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKinectTests", "TKinectTests\TKinectTests.csproj", "{EBF04A6A-BE9B-48EB-942A-8299E7A0108D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B5C71FC-1DBB-4FB0-B3EF-936D85C1F936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B5C71FC-1DBB-4FB0-B3EF-936D85C1F936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B5C71FC-1DBB-4FB0-B3EF-936D85C1F936}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{7B5C71FC-1DBB-4FB0-B3EF-936D85C1F936}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7B5C71FC-1DBB-4FB0-B3EF-936D85C1F936}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7B5C71FC-1DBB-4FB0-B3EF-936D85C1F936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B5C71FC-1DBB-4FB0-B3EF-936D85C1F936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B5C71FC-1DBB-4FB0-B3EF-936D85C1F936}.Release|ARM.ActiveCfg = Release|Any CPU
+		{7B5C71FC-1DBB-4FB0-B3EF-936D85C1F936}.Release|x64.ActiveCfg = Release|x64
+		{7B5C71FC-1DBB-4FB0-B3EF-936D85C1F936}.Release|x64.Build.0 = Release|x64
+		{7B5C71FC-1DBB-4FB0-B3EF-936D85C1F936}.Release|x86.ActiveCfg = Release|Any CPU
+		{AD1E3AFC-1FCF-419C-B643-503F7F467081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD1E3AFC-1FCF-419C-B643-503F7F467081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD1E3AFC-1FCF-419C-B643-503F7F467081}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{AD1E3AFC-1FCF-419C-B643-503F7F467081}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AD1E3AFC-1FCF-419C-B643-503F7F467081}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AD1E3AFC-1FCF-419C-B643-503F7F467081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD1E3AFC-1FCF-419C-B643-503F7F467081}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD1E3AFC-1FCF-419C-B643-503F7F467081}.Release|ARM.ActiveCfg = Release|Any CPU
+		{AD1E3AFC-1FCF-419C-B643-503F7F467081}.Release|x64.ActiveCfg = Release|x64
+		{AD1E3AFC-1FCF-419C-B643-503F7F467081}.Release|x64.Build.0 = Release|x64
+		{AD1E3AFC-1FCF-419C-B643-503F7F467081}.Release|x86.ActiveCfg = Release|Any CPU
+		{EBF04A6A-BE9B-48EB-942A-8299E7A0108D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBF04A6A-BE9B-48EB-942A-8299E7A0108D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBF04A6A-BE9B-48EB-942A-8299E7A0108D}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{EBF04A6A-BE9B-48EB-942A-8299E7A0108D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EBF04A6A-BE9B-48EB-942A-8299E7A0108D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EBF04A6A-BE9B-48EB-942A-8299E7A0108D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBF04A6A-BE9B-48EB-942A-8299E7A0108D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBF04A6A-BE9B-48EB-942A-8299E7A0108D}.Release|ARM.ActiveCfg = Release|Any CPU
+		{EBF04A6A-BE9B-48EB-942A-8299E7A0108D}.Release|x64.ActiveCfg = Release|x64
+		{EBF04A6A-BE9B-48EB-942A-8299E7A0108D}.Release|x64.Build.0 = Release|x64
+		{EBF04A6A-BE9B-48EB-942A-8299E7A0108D}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

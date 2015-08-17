@@ -1,0 +1,149 @@
+﻿<Controls:MetroWindow  x:Class="TKinectStudio.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:kinectViews="clr-namespace:TKinectStudio.KinectViews"
+        
+        Title="TKinect Studio" 
+        Height="600" 
+        Width="880" 
+        Icon="Images\Kinect.ico"     
+        EnableDWMDropShadow="True"
+        ResizeMode="CanResizeWithGrip"
+        WindowTransitionsEnabled="False"
+                    
+        Loaded="WindowLoaded"
+        Closed="WindowClosing">
+
+
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <telerik:RadMenu DockPanel.Dock="Top" Background="Transparent">
+                <telerik:RadMenuItem Header="VIEW" >
+                    <telerik:RadMenuItem Header="Open"/>
+                    <telerik:RadMenuItem Header="Close"/>
+                    <telerik:RadMenuItem Header="Save"/>
+                </telerik:RadMenuItem>
+            </telerik:RadMenu>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Icons.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            
+            <Button Width="55" Height="55" Style="{DynamicResource MetroCircleButtonStyle}" Margin="5" Click="ButtonReplay">
+                <StackPanel Orientation="Vertical">
+                        <Rectangle Width="20" Height="20">
+                            <Rectangle.Fill>
+                                <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_control_play}" />
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <TextBlock FontSize="10" Text="Play" />
+                </StackPanel>
+            </Button>
+
+            <ToggleButton Width="55" Height="55" Style="{DynamicResource MetroCircleToggleButtonStyle}" Margin="5" Click="ButtonRecordChanged">
+                <StackPanel Orientation="Vertical">
+                    <Rectangle Width="20" Height="20" Fill="{DynamicResource BlackBrush}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Fill"
+                             Visual="{DynamicResource appbar_movie_clapper}"/>
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock FontSize="10" Text="Record" />
+                </StackPanel>
+            </ToggleButton>
+
+            <Button Width="55" Height="55" Style="{DynamicResource MetroCircleButtonStyle}" Margin="5" Click="ButtonLoad">
+                <StackPanel Orientation="Vertical">
+                    <Rectangle Width="20" Height="20">
+                        <Rectangle.Fill>
+                            <VisualBrush Stretch="Fill"  Visual="{StaticResource appbar_upload}" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <TextBlock FontSize="10" Text="Load" />
+                </StackPanel>
+            </Button>
+
+            <Button Width="55" Height="55" Style="{DynamicResource MetroCircleButtonStyle}" Margin="5" Click="ButtonSave">
+                <StackPanel Orientation="Vertical">
+                    <Rectangle Width="20" Height="20">
+                        <Rectangle.Fill>
+                            <VisualBrush Stretch="Fill"  Visual="{StaticResource appbar_download}" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <TextBlock FontSize="10" Text="Save" />
+                </StackPanel>
+            </Button>
+
+
+            <Button Width="55" Height="55" Style="{DynamicResource MetroCircleButtonStyle}" Margin="5" Click="ButtonRecordingSuit">
+                <StackPanel Orientation="Vertical">
+                    <Rectangle Width="20" Height="20">
+                        <Rectangle.Fill>
+                            <VisualBrush Stretch="Fill"  Visual="{StaticResource appbar_paper}" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <TextBlock FontSize="10" Text="SaveSuit" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <telerik:RadDocking Grid.Row="1"  x:Name="DockingManager">
+            
+            <telerik:RadDocking.DocumentHost>
+                <telerik:RadSplitContainer>
+                    <telerik:RadPaneGroup x:Name="CenterPaneGroup" >
+                        <telerik:RadPane x:Name="ColorStreamPane" Header="ColorStream">
+                            <kinectViews:ColorView />
+                        </telerik:RadPane>
+                        <telerik:RadPane x:Name="DepthStreamPane" Header="DepthStream">
+                            <kinectViews:DepthView />
+                        </telerik:RadPane>
+                        <telerik:RadPane x:Name="SkeletonStreamPane" Header="SkeletonStream">
+                            <kinectViews:SkeletonView />
+                        </telerik:RadPane>
+                    </telerik:RadPaneGroup>
+                </telerik:RadSplitContainer>
+            </telerik:RadDocking.DocumentHost>
+            
+            <telerik:RadSplitContainer InitialPosition="DockedLeft">
+                <telerik:RadPaneGroup x:Name="LeftPaneGroup">
+                    <telerik:RadPane Name="RecordingsPane"  Header="Recordings">
+                        <telerik:RadGridView x:Name="RecordingsGrid" AutoGenerateColumns="True" ShowGroupPanel="False" IsReadOnly="True"/>
+                    </telerik:RadPane>
+                    
+                    <telerik:RadPane Name="RecordingSuitsPane"  Header="RecordingsSuits">
+                        <telerik:RadGridView x:Name="RecordingsSuitsGrid" AutoGenerateColumns="True" ShowGroupPanel="False" IsReadOnly="True"/>
+                    </telerik:RadPane>
+                </telerik:RadPaneGroup>
+            </telerik:RadSplitContainer>
+
+            <telerik:RadSplitContainer InitialPosition="DockedRight">
+                <telerik:RadPaneGroup x:Name="RightPaneGroup">
+                    <telerik:RadPane Name="PlayListPane"  Header="PlayList">
+                        <telerik:RadGridView x:Name="PlayListGrid" AutoGenerateColumns="True" ShowGroupPanel="False" IsReadOnly="True"/>
+                    </telerik:RadPane>
+
+                </telerik:RadPaneGroup>
+            </telerik:RadSplitContainer>
+            
+        </telerik:RadDocking>
+
+    </Grid>
+</Controls:MetroWindow>

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Color", "Color\Color.csproj", "{F9389332-DE0F-4674-97E7-CF278735494F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Depth", "Depth\Depth.csproj", "{1DBFC068-71F8-41B3-A704-7543CCBF1478}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skeleton", "Skeleton\Skeleton.csproj", "{DCB04F20-B835-4E3D-8658-4B654F6F4CCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9389332-DE0F-4674-97E7-CF278735494F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9389332-DE0F-4674-97E7-CF278735494F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9389332-DE0F-4674-97E7-CF278735494F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9389332-DE0F-4674-97E7-CF278735494F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DBFC068-71F8-41B3-A704-7543CCBF1478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DBFC068-71F8-41B3-A704-7543CCBF1478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DBFC068-71F8-41B3-A704-7543CCBF1478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DBFC068-71F8-41B3-A704-7543CCBF1478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCB04F20-B835-4E3D-8658-4B654F6F4CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCB04F20-B835-4E3D-8658-4B654F6F4CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCB04F20-B835-4E3D-8658-4B654F6F4CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCB04F20-B835-4E3D-8658-4B654F6F4CCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
