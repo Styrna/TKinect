@@ -38,9 +38,8 @@ namespace TKinectStudio
             InitializeComponent();
         }
 
-        //public readonly string RecordingDir = @"C:\Users\piotrsty\Desktop\TKinectDir";
-        public readonly string RecordingDir = @"C:\Users\Styrna\Desktop\PassedData";
-        public readonly string TempRecordingDir = System.IO.Path.GetTempPath();
+        public readonly string RecordingDir = @"PassedData";
+        public readonly string TempRecordingDir = Path.GetTempPath();
         public readonly string TempRecordingName = "KinectRecording.xed";
 
         public ObservableCollection<Recording> Recordings { get; set; }
@@ -63,8 +62,10 @@ namespace TKinectStudio
             Recordings = new ObservableCollection<Recording>();
             RecordingSuits = new ObservableCollection<RecordingSuit>();
 
-            Playlist.Add(new Recording(TempRecordingName, TempRecordingDir));
 
+            //Add files to Recording list
+            if (File.Exists(Path.Combine(TempRecordingDir, TempRecordingName)))
+                Playlist.Add(new Recording(TempRecordingName, TempRecordingDir));
             foreach (var file in recordingDir.GetFiles())
                 Recordings.Add(new Recording(file.Name,file.DirectoryName));
 
