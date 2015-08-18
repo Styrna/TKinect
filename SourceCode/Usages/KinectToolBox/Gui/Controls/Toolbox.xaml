@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Gui.Controls.Toolbox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:vm="clr-namespace:Gui.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="300">
+    <UserControl.DataContext>
+        <vm:ToolboxViewModel />
+    </UserControl.DataContext>
+
+    <Grid>
+        <Button  Content="Record" Height="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10 10 80 10" Name="Start" Click="RecordClicked" />
+        <Button  Content="Replay" Height="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10 10 10 10" Name="Play" Click="ReplayClicked" />
+ </Grid>
+</UserControl>
