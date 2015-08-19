@@ -4,6 +4,7 @@ using Kinect.Toolbox.Utils;
 using Microsoft.Kinect;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -21,6 +22,8 @@ namespace HelloKinect
         public KinectSensor Kinect { get; set; }
         public TKinect.TKinect TKinect { get; set; }
         public PostureAnalyzer PostureAnalyzer { get; set; }
+
+        private const string RecordingPath = @"C:\Users\Styrna\Desktop\PassedData\hello.xed";
 
         public HelloKinect()
         {
@@ -67,6 +70,11 @@ namespace HelloKinect
                 return true;
             }
             Console.WriteLine("NO REAL KINECT DETECTED");
+
+
+            var fileStream = new FileStream(RecordingPath, FileMode.Open);
+            TKinect.ReplayStart(fileStream);
+
             return false;
         }
 
