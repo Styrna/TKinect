@@ -16,6 +16,9 @@ namespace Tests
     [TestFixture]
     public class HelloWorldAnalyzerTests
     {
+        private const string RecordingPath = @"C:\Users\piotrsty\Desktop\GIT_HUB\RECORDING.xed";
+
+
         private TKinect.TKinect Kinect { get; set;}
         private PostureAnalyzer PostureAnalyzer { get; set; }
 
@@ -42,12 +45,11 @@ namespace Tests
         [Test]
         public void LeftHelloDetected()
         {
-            using (var fileStream = new FileStream(@"Recordings\RECORDING.xed", FileMode.Open))
+            using (var fileStream = new FileStream(RecordingPath, FileMode.Open))
             {
                 Kinect.RecordStart(fileStream);
             }
-
-            Thread.Sleep(3000);
+            Thread.Sleep(5000);
 
             Assert.True(_leftHello);
         }
