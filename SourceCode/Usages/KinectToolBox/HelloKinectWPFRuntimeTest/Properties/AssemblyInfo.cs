@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HelloKinect")]
+[assembly: AssemblyTitle("HelloKinectWPFRuntimeTest")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("HelloKinect")]
+[assembly: AssemblyProduct("HelloKinectWPFRuntimeTest")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("82b3c3de-0fe4-442f-afbb-fe0d33b19a60")]
+[assembly: Guid("005ef5bb-b4cf-4720-b497-ff0fe82d1ab1")]
 
 // Version information for an assembly consists of the following four values:
 //

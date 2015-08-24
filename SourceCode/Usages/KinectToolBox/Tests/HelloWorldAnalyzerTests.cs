@@ -45,14 +45,11 @@ namespace Tests
         [Test]
         public void LeftHelloDetected()
         {
-
-            //REPAY>>!!!
-            using (var fileStream = new FileStream(RecordingPath, FileMode.Open))
-            {
-                Kinect.RecordStart(fileStream);
-            }
+            var fileStream = new FileStream(RecordingPath, FileMode.Open);
+            Kinect.ReplayStart(fileStream);
             Thread.Sleep(8000);
 
+            fileStream.Close();
             Assert.True(_leftHello);
         }
     }

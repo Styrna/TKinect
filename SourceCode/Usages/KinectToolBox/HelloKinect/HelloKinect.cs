@@ -15,15 +15,16 @@ namespace HelloKinect
 {
     public class HelloKinect
     {
-        private bool _end = false;
-        
+        public delegate void HelloHandler(object sender, int helloCount);
+        public event HelloHandler HelloDetected;
+
+        private const string RecordingPath = @"C:\Users\Styrna\Desktop\PassedData\hello.xed";
+
         public int HelloCounter { get; private set; }
 
         public KinectSensor Kinect { get; set; }
         public TKinect.TKinect TKinect { get; set; }
         public PostureAnalyzer PostureAnalyzer { get; set; }
-
-        private const string RecordingPath = @"C:\Users\Styrna\Desktop\PassedData\hello.xed";
 
         public HelloKinect()
         {
@@ -40,7 +41,7 @@ namespace HelloKinect
             PostureAnalyzer.PostureDetected += PostureAnalyzerOnPostureDetected;
         }
 
-        public bool RunKinect()
+        public void RunRealKinect()
         {
             int index = 0;
             while (Kinect == null && index < KinectSensor.KinectSensors.Count)
@@ -67,15 +68,20 @@ namespace HelloKinect
                     MaxDeviationRadius = 0.04f
                 });
                 Kinect.SkeletonFrameReady += TKinect.SensorSkeletonFrameHandler;
-                return true;
+                return;
             }
             Console.WriteLine("NO REAL KINECT DETECTED");
+        }
 
-
+        public void RunKinectReplay()
+        {
             var fileStream = new FileStream(RecordingPath, FileMode.Open);
             TKinect.ReplayStart(fileStream);
+        }
 
-            return false;
+        public void RunKinectClient()
+        {
+            TKinect.SkeletonFrameClient.Connect("localhost", 4503);
         }
 
         private void PostureAnalyzerOnPostureDetected(object sender, PostureEventArgs args)
@@ -83,7 +89,7 @@ namespace HelloKinect
             if(args.Posture == PosturesEnum.RightHello)
             {
                 HelloCounter++;
-                Console.WriteLine(string.Format("Hello nr {0} Detected !!!", HelloCounter));
+                HelloDetected(this, HelloCounter);
             }
         }
 

@@ -4,8 +4,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9C7688A0-B71F-44F5-A0DA-56B197E64D3B}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{D488D64F-621C-42AB-B1EB-7F1979602EB5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HelloKinect</RootNamespace>
     <AssemblyName>HelloKinect</AssemblyName>
@@ -13,6 +13,7 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,10 +45,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HelloKinect.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelloKinect\HelloKinect.csproj">
+      <Project>{9c7688a0-b71f-44f5-a0da-56b197e64d3b}</Project>
+      <Name>HelloKinect</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Kinect.Toolbox\Kinect.Toolbox.csproj">
       <Project>{f7521b73-4016-42b0-9c0f-a7e9cfcb9d6a}</Project>
       <Name>Kinect.Toolbox</Name>
