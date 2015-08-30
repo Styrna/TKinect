@@ -32,10 +32,6 @@ namespace TKinectStudio
             sensor.SkeletonStream.Enable();
             sensor.SkeletonFrameReady += TKinect.SensorSkeletonFrameHandler;
 
-            //Redirect real sensor frames to TKinect
-            sensor.ColorFrameReady += TKinect.SensorColorFrameHandler;
-            sensor.DepthFrameReady += TKinect.SensorDepthFrameHandler;
-            sensor.SkeletonFrameReady += TKinect.SensorSkeletonFrameHandler;
 
             try
             {
