@@ -27,7 +27,7 @@ namespace HelloKinectWPFRuntimeTest
             tkinect.SkeletonFrameHost.Start(4503);
 
             Application application = Application.Launch(@"..\..\..\HelloKinectWPF\bin\Debug\HelloKinectWPF.exe");
-            Window window = application.GetWindow("MainWindow", InitializeOption.NoCache);
+            Window window = application.GetWindow("Hello Kinect", InitializeOption.NoCache);
             window.WaitWhileBusy();
 
             var label = window.Get<TestStack.White.UIItems.Label>(SearchCriteria.ByAutomationId("Label"));
@@ -35,12 +35,12 @@ namespace HelloKinectWPFRuntimeTest
 
             var fileStream = new FileStream(RecordingPath, FileMode.Open);
             tkinect.ReplayStart(fileStream);
-            Thread.Sleep(8000);
+            Thread.Sleep(18000);
 
             var label2 = window.Get<TestStack.White.UIItems.Label>(SearchCriteria.ByAutomationId("Label"));
 
-            fileStream.Close();
             application.Close();
+            fileStream.Close();
         }
     }
 }

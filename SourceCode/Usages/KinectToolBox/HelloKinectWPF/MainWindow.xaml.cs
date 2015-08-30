@@ -18,30 +18,30 @@ namespace HelloKinectWPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+public partial class MainWindow : Window
+{
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-
-        private void Window_Initialized(object sender, EventArgs e)
-        {
-            var hello = new HelloKinect.HelloKinect();
-            hello.HelloDetected += hello_HelloDetected;
-
-
-            //hello.RunRealKinect();
-            //hello.RunKinectReplay();
-            hello.RunKinectClient();
-        }
-
-        private void hello_HelloDetected(object sender, int helloCount)
-        {
-            this.Dispatcher.Invoke(() =>
-            {
-                Label.Content = "Hello Kinect";
-            });
-        }
+        InitializeComponent();
     }
+
+    private void Window_Initialized(object sender, EventArgs e)
+    {
+        var hello = new HelloKinect.HelloKinect();
+        hello.HelloDetected += hello_HelloDetected;
+
+
+        //hello.RunRealKinect();
+        //hello.RunKinectReplay();
+        hello.RunKinectClient();
+    }
+
+    private void hello_HelloDetected(object sender, int helloCount)
+    {
+        this.Dispatcher.Invoke(() =>
+        {
+            Label.Content = "Hello Kinect";
+        });
+    }
+}
 }
